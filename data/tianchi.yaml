@@ -1,0 +1,21 @@
+# train and val datasets (image directory or *.txt file with image paths)
+train: ../coco/train2017.txt  # 118k images
+val: ../coco/val2017.txt  # 5k images
+test: ../coco/testdev2017.txt  # 20k images for submission to https://competitions.codalab.org/competitions/20794
+
+# number of classes
+nc: 8
+
+# {
+#   0: "边异常",
+#   1: "角异常",
+#   2: "白色点瑕疵",
+#   3: "浅色块瑕疵",
+#   4: "深色点块瑕疵",
+#   5: "光圈瑕疵",
+#   6: "裂纹",
+#   7: "分层"
+#  }
+
+# class names
+names: ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',]
