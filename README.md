@@ -27,14 +27,24 @@ This is the implementation of "[Scaled-YOLOv4: Scaling Cross Stage Partial Netwo
 |  |  |  |  |  |  |  |  |
 
 ## Installation
+### prepare
+```
+# first you need to login
+# see documents here https://blog.csdn.net/chqfeiyang/article/details/89674055
+# then
+docker pull nvcr.io/nvidia/pytorch:20.06-py3
 
 ```
+### run docker
+```
 # create the docker container, you can change the share memory size if you have more.
-nvidia-docker run --name yolov4_csp -it -v your_coco_path/:/coco/ -v your_code_path/:/yolo --shm-size=64g nvcr.io/nvidia/pytorch:20.06-py3
 
-# install mish-cuda, if you use different pytorch version, you could try https://github.com/thomasbrandon/mish-cuda
+nvidia-docker run --name yolov4_csp -it -v your_coco_path/:/coco/ -v your_code_path/:/yolo --shm-size=64g nvcr.io/nvidia/pytorch:20.06-py3
+# nvidia-docker run --name yolov4_csp -it -v /home/zhangqibot/proj/tianchi:/yolo nvcr.io/nvidia/pytorch:20.06-py3
+
+# install mish-cuda, if you use different pytorch version, you could try https://github.com/JunnYu/mish-cuda
 cd /
-git clone https://github.com/JunnYu/mish-cuda
+git clone https://github.com/thomasbrandon/mish-cuda
 cd mish-cuda
 python setup.py build install
 
