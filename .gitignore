@@ -1,3 +1,2 @@
 *.pt
-/images/
-/labels/
+data/coco128
